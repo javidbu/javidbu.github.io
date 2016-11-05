@@ -275,6 +275,11 @@ Full-Width Styles
   color: #fff;
 }
 
+.nav_link:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
 .outer {
   width: 100%;
 }
