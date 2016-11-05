@@ -45,11 +45,6 @@ nav ul li {
     margin-right: 20px;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #fff;
-}
-
 ol, ul {
   list-style: none;
 }
@@ -274,6 +269,11 @@ form {
 /*******************************************************************************
 Full-Width Styles
 *******************************************************************************/
+
+.nav_link {
+  text-decoration: none;
+  color: #fff;
+}
 
 .outer {
   width: 100%;
