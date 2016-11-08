@@ -1,3 +1,3 @@
-# [www.javidbu.site](http://www.javidbu.site/){:target="_blank"}
+# [www.javidbu.site](http://www.javidbu.site/)
 
 Esta es mi página personal, gracias a Github Pages
