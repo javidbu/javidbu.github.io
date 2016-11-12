@@ -14,5 +14,10 @@ comments: false
 <p>Empezaremos con una clase sobre cómo movernos en una hoja de Excel, y luego iremos avanzando poco a poco.</p>
 
 <ol>
-	<li><a href="/excel/Como_movernos_por_una_hoja_de_excel.html">Cómo movernos por una hoja de Excel</a></li>
+	{% assign sorted_pages = site.pages | sort:"order" %}
+	{% for page in sorted_pages %}
+		{% if page.url contains "excel/" and page.url != "/excel/" and page.url != "/excel/under_construction.html" %}
+			<li><a href="{{page.url}}">{{page.title}}</a></li>
+		{% endif %}
+	{% endfor %}
 </ol>
