@@ -1,0 +1,31 @@
+---
+layout: excel
+title: Copiar y pegar
+comments: true
+order: 2
+---
+<h1>Copiar y pegar</h1>
+
+<p>Esta vez vamos a aprender a copiar y pegar. Sí, copiar y pegar, sencillamente eso. ¿Y en qué puede ayudarnos copiar y pegar? Nos ayudará a reutilizar nuestras fórmulas a lo largo de todo un documento de Excel, a aplicar la misma fórmula en un amplio rango de celdas, o a trasladar los resultados de unas fórmulas como datos a otro rango, por ejemplo. Veamos cómo es la forma correcta de copiar y pegar en Excel.</p>
+
+<p>El atajo de teclado para copiar es, como casi todos sabréis, <kbd>Ctrl + C</kbd>. Para pegar, en Excel, tenemos dos, el primero, que seguro que conocéis todos, es <kbd>Ctrl + V</kbd>, pero el segundo, y seguramente más importante, es <kbd>AltGr + V</kbd>, que es el atajo de teclado de la función <em>pegado especial</em> de Excel. Al pulsarlo se nos abrirá un cuadro de diálogo, con diversas opciones, como el de la siguiente imagen</p>
+
+<img src="/img/Pegado_especial.png" alt="Diálogo de pegado especial de Excel">
+
+<p>Como podéis ver, hay varias opciones, divididas en tres bloques. El primero, <em>Pegar</em>, contiene las distintas formas de pegado de las que disponemos. El segundo, <em>Operación</em>, contiene las distintas operaciones matemáticas que podemos usar durante el pegado. El tercero contiene modificadores útiles que nos pueden ser de ayuda al pegar.</p>
+
+<p>Podemos ver que cada una de estas opciones tiene una letra subrayada. Esto nos ayudará a elegir una de ellas simplemente pulsando esa letra. Por ejemplo, si queremos pegar sólo los valores, esto es, si hemos copiado una fórmula, pegaremos el resultado y no la fórmula, lo que tenemos que hacer es pulsar <kbd>AltGr + V</kbd>, y después pulsaremos la tecla <kbd>R</kbd> y pulsaremos <kbd>Enter</kbd>, todo ello sin usar el ratón en ningún momento.</p>
+
+<p>Podemos elegir una opción en cada bloque, por ejemplo, podemos pegar como valores, sumando esos valores, y trasponiendo el rango original. Vamos a hacer un ejemplo, para lo que tendréis que descargar un archivo pinchando en el siguiente logo:</p>
+
+<a href="/excel/descargas/Pegado_especial.xlsx"><img src="/img/xlsx.png" alt="Excel logo" height="50"></a>
+
+<p>Si abrís el archivo, veréis dos filas de números, una horizontal y otra vertical. Para hacerlo, he ido a la celda B3 y he escrito 1, luego he ido a la B4 y he escrito <kbd>+B3+1</kbd>, dando como resultado un 2, y he pegado esa fórmula hasta la celda B12. Luego, he seleccionado el rango B3:B12, y lo he copiado. He ido a la celda C2 y he pulsado <kbd>AltGr + V</kbd>, y luego <kbd>T</kbd> y <kbd>Enter</kbd>, y así he pegado el mismo rango, pero trasponiéndolo, de manera que en vez de estar en vertical, ahora está en horizontal.</p>
+
+<p>Lo que quiero que hagamos con este archivo es sencillo, quiero que en el rango C2:L2 consigamos poner los números pares, desde el 2 hasta el 20. Si quieres intentar hacerlo tú directamente, usando sólo copiar y pegar, adelante. Si no, la solución está en el siguiente párrafo.</p>
+
+<p><b>Solución:</b> Copiaremos el rango C2:L2, y trataremos de pegarlo allí mismo sumándolo. Podemos ver que no obtenemos el resultado esperado. ¿Por qué? Pues sencillamente, porque Excel ha hecho exactamente lo que le pedimos, ha sumado las fórmulas que había en el rango, y ahora podéis ver que la celda D2 contiene la fórmula <kbd>=(+C2+1)+(+C2+1)</kbd>, por lo que suma la celda anterior (2) dos veces, y luego le suma 2. Antes de eso, tendremos que asegurarnos de que en el rango C2:L2 no tenemos fórmulas, así que copiamos el rango B3:B12, vamos a la celda C2 y hacemos un pegado especial de los valores, trasponiendo el rango. Ahora ese rango no contiene ninguna fórmula, sólo valores, así que podremos copiarlo, y pegarlo utilizando la operación suma, y tendremos el resultado deseado.</p>
+
+<p>Ahora sólo os queda practicar por vuestra cuenta.</p>
+
+<p><a href="excel/">&larr; Volver al índice</a></p>
