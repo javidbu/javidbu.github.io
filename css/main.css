@@ -285,6 +285,26 @@ Full-Width Styles
   color: #fff;
 }
 
+.previous_col {
+  text-align: left;
+  border: 0px;
+}
+
+.index_col {
+  text-align: center;
+  border: 0px;
+}
+
+.next_col {
+  text-align: right;
+  border: 0px;
+}
+
+.nav_table {
+  width: 100%;
+  border: 0px;
+}
+
 .outer {
   width: 100%;
 }
