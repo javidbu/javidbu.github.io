@@ -1,21 +1,25 @@
-<table class="nav_table">
-  <col width="33%">
-  <col width="33%">
-  <tr>
-    <td class="previous_col">
-    	{% for spage in site.pages %}
-		{% if spage.next == page.order %}
-		<a href="{{spage.url}}">&larr; {{spage.title}}</a>
-		{% endif %}
-		{% endfor %}
-	</td>
-    <td class="index_col"><a href="/excel/">Índice</a></td> 
-    <td class="next_col">
-    	{% for spage in site.pages %}
-		{% if spage.previous == page.order %}
-		<a href="{{spage.url}}">{{spage.title}} &rarr;</a>
-		{% endif %}
-		{% endfor %}
-	</td>
-  </tr>
-</table>
+{% if page.excel_nav %}
+<section id="excel_nav" class="inner">
+	<table class="nav_table">
+	  <col width="33%">
+	  <col width="33%">
+	  <tr>
+	    <td class="previous_col">
+	    	{% for spage in site.pages %}
+			{% if spage.next == page.order %}
+			<a href="{{spage.url}}">&larr; {{spage.title}}</a>
+			{% endif %}
+			{% endfor %}
+		</td>
+	    <td class="index_col"><a href="/excel/">Índice</a></td> 
+	    <td class="next_col">
+	    	{% for spage in site.pages %}
+			{% if spage.previous == page.order %}
+			<a href="{{spage.url}}">{{spage.title}} &rarr;</a>
+			{% endif %}
+			{% endfor %}
+		</td>
+	  </tr>
+	</table>
+</section>
+{% endif %}

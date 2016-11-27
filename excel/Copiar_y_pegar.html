@@ -29,5 +29,3 @@ next: 3
 <p><b>Solución:</b> Copiaremos el rango C2:L2, y trataremos de pegarlo allí mismo sumándolo. Podemos ver que no obtenemos el resultado esperado. ¿Por qué? Pues sencillamente, porque Excel ha hecho exactamente lo que le pedimos, ha sumado las fórmulas que había en el rango, y ahora podéis ver que la celda D2 contiene la fórmula <kbd>=(+C2+1)+(+C2+1)</kbd>, por lo que suma la celda anterior (2) dos veces, y luego le suma 2. Antes de eso, tendremos que asegurarnos de que en el rango C2:L2 no tenemos fórmulas, así que copiamos el rango B3:B12, vamos a la celda C2 y hacemos un pegado especial de los valores, trasponiendo el rango. Ahora ese rango no contiene ninguna fórmula, sólo valores, así que podremos copiarlo, y pegarlo utilizando la operación suma, y tendremos el resultado deseado.</p>
 
 <p>Ahora sólo os queda practicar por vuestra cuenta.</p>
-
-{% include excel_nav.html %}
