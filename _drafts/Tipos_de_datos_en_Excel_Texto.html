@@ -6,8 +6,14 @@ previous: 2
 order: 3
 next: 4
 ---
-<h1>Tipos de datos en Excel: Texto</h1>
+<h1>{{ page.title }}</h1>
 
-<p>Lorem ipsum y esas chorradas.</p>
+<p>En las siguientes lecciones vamos a ver cómo trata los distintos tipos de datos Excel. Para empezar, hablaremos sobre los textos, y más adelante veremos fechas, números y booleanos.</p>
+
+<p>En una celda de Excel se puede almacenar una cadena de texto, y se pueden hacer operaciones con ella. Pero, ¿qué tipo de operaciones se pueden hacer con un texto? Obviamente, no se pueden sumar ni restar, no se pueden hacer operaciones matemáticas, pero sí se pueden hacer cosas como obtener las 5 primeras letras de la cadena, ver cuántos caracteres tiene, quitar posibles espacios al final, etc.</p>
+
+<p>Empezaremos con operaciones de <em>troceado</em>, es decir, partiendo de una cadena más larga, vamos a sacar trozos de esta cadena. Para ello, abrid un libro nuevo de Excel, y en la celda A1 escribid "Esto es una cadena de texto en una celda de Excel" (sin las comillas). Vamos a sacar los 10 primeros caracteres de la cadena. Nos ponemos en la celda B1 y escribimos <kbd>IZQUIERDA(A1;10)</kbd>, y al darle a <kbd>Enter</kbd>, veremos que aparece "Esto es un". La función <kbd>IZQUIERDA(texto, núm_de_caracteres)</kbd> de Excel extrae  del texto el número de caracteres especificado.</p>
+
+<p>Existe otra función, <kbd>DERECHA(texto, núm_de_caracteres)</kbd>, que sirve para extraer los últimos caracteres de un texto. Os dejo a vosotros que, en la celda C1, pongáis los 10 últimos caracteres de la celda A1, el resultado debería ser "a de Excel".</p>
 
 {% include excel_nav.html %}
