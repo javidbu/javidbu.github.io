@@ -1,6 +1,6 @@
 ---
 layout: excel
-title: Tipos de datos en Excel: Texto
+title: Tipos de datos en Excel&#58; Texto (I)&#58; troceado
 comments: true
 excel_nav: true
 previous: 2
@@ -13,6 +13,22 @@ next: 4
 
 <p>En una celda de Excel se puede almacenar una cadena de texto, y se pueden hacer operaciones con ella. Pero, ¿qué tipo de operaciones se pueden hacer con un texto? Obviamente, no se pueden sumar ni restar, no se pueden hacer operaciones matemáticas, pero sí se pueden hacer cosas como obtener las 5 primeras letras de la cadena, ver cuántos caracteres tiene, quitar posibles espacios al final, etc.</p>
 
-<p>Empezaremos con operaciones de <em>troceado</em>, es decir, partiendo de una cadena más larga, vamos a sacar trozos de esta cadena. Para ello, abrid un libro nuevo de Excel, y en la celda A1 escribid "Esto es una cadena de texto en una celda de Excel" (sin las comillas). Vamos a sacar los 10 primeros caracteres de la cadena. Nos ponemos en la celda B1 y escribimos <kbd>IZQUIERDA(A1;10)</kbd>, y al darle a <kbd>Enter</kbd>, veremos que aparece "Esto es un". La función <kbd>IZQUIERDA(texto, núm_de_caracteres)</kbd> de Excel extrae  del texto el número de caracteres especificado.</p>
+<p>Empezaremos con operaciones de <em>troceado</em>, es decir, partiendo de una cadena más larga, vamos a sacar trozos de esta cadena. Para ello, abrid un libro nuevo de Excel, y en la celda A1 escribid "Esto es una cadena de texto en una celda de Excel" (sin las comillas). Vamos a sacar los 10 primeros caracteres de la cadena. Nos ponemos en la celda B1 y escribimos <kbd>=IZQUIERDA(A1;10)</kbd>, y al darle a <kbd>Enter</kbd>, veremos que aparece "Esto es un". La función <kbd>IZQUIERDA(texto, núm_de_caracteres)</kbd> de Excel extrae  del texto el número de caracteres especificado.</p>
 
 <p>Existe otra función, <kbd>DERECHA(texto, núm_de_caracteres)</kbd>, que sirve para extraer los últimos caracteres de un texto. Os dejo a vosotros que, en la celda C1, pongáis los 10 últimos caracteres de la celda A1, el resultado debería ser "a de Excel".</p>
+
+<p>Estas dos funciones trocean el texto por sus extremos, pero si queremos trocearlo a mitad, ¿qué podemos hacer? Hay dos opciones, la primera (y menos recomendable) es combinar las funciones <kbd>IZQUIERDA</kbd> y <kbd>DERECHA</kbd>, pero la más correcta es usar la función <kbd>EXTRAE(texto; posición_inicial; núm_de_caracteres)</kbd>, que devuelve los caracteres que le pidamos desde una posición dada. De este modo, si nos ponemos en la celda D1 y escribimos <kbd>=EXTRAE(A1;22;6)</kbd>, obtendremos el resultado " texto".</p>
+
+<p>Hay otra función que, combinada con las anteriores, nos puede ser muy útil, <kbd>ENCONTRAR(texto_buscado; dentro_del_texto; [núm_inicial])</kbd>, que encuentra un texto dentro de otro, con la opción de que empiece la búsqueda a partir de una posición concreta (por defecto empieza desde el principio). Vamos a ver cómo funciona, escribiendo en la celda A2 <kbd>=ENCONTRAR(" ";A1)</kbd>, y obtendremos el resultado 5 (nota: en Excel, cuando los parámetros de una función están entre corchetes significa que son opcionales, aquí podéis ver que no los hemos usado, pero pronto pondremos un ejemplo en el que se usan).</p>
+
+<p>Vamos ahora a combinar <kbd>ENCONTRAR</kbd> con <kbd>EXTRAE</kbd>, para hacer una función que nos dé como resultado la segunda palabra de una frase. Para ello, introduciremos la frase en la celda A3, por ejemplo, pondremos "Estoy aprendiendo un montón de Excel", e intentaremos obtener la palabra "aprendiendo" en la celda B3. podemos empezar por escribir <kbd>=EXTRAE(A3;7;11)</kbd>, y vemos que obtenemos el resultado esperado, pero sólo nos servirá para frases en las que la primera palabra tenga 5 letras y la segunda tenga 11.</p>
+
+<p>Para arreglar nuestra función, y que nos sirva para cualquier frase habrá que sustituir el 7 y el 11 por funciones que nos encuentren el principio y el final de la palabra. La palabra empezará después del primer espacio de la frase, así que podremos sustituir el 7 por <kbd>ENCONTRAR(" ";A3)+1</kbd> (el <kbd>+1</kbd> es para indicar que la palabra no empieza con el espacio encontrado, sino con la letra siguiente). Con esto, ya obtendríamos un buen resultado siempre que la segunda palabra de la frase tuviese 11 letras, pero no nos serviría para cualquier caso...</p>
+
+<p>Para arreglarlo, podemos cambiar el 11 por la distancia desde el segundo espacio hasta el primero. ¿Cuál es la posición del segundo espacio? Habrá que encontrar un espacio en el texto, pero a partir de la posición del primer espacio. Para ello, haremos uso del parámetro opcional de <kbd>ENCONTRAR</kbd>. La posición del segundo espacio será <kbd>ENCONTRAR(" ";A3;ENCONTRAR(" ";A3)+1)</kbd>, es decir, la posición del primer espacio que se encuentra a partir de la posición siguiente al primer espacio (si no ponemos el <kbd>+1</kbd> nos encontrará otra vez el primer espacio).</p>
+
+<p>¿Cuántas letras hay entonces entre los dos espacios? Muy sencillo, <kbd>posición_espacio_2 - posición_espacio_1 - 1</kbd> (aquí hay que restar uno porque entre la posición del primer espacio y la del segundo está incluído el primer espacio, y no queremos contarlo como letra de la palabra). Con todo esto, nuestra función quedaría así:</p>
+
+<code>=EXTRAE(A3;ENCONTRAR(" ";A3)+1;ENCONTRAR(" ";A3;ENCONTRAR(" ";A3)+1)-ENCONTRAR(" ";A3)-1)</code>
+
+<p>Ahora podéis probar a cambiar el texto de la celda A3, para ver cómo cambia la segunda palabra en la celda B3, os dejo un rato para que juguéis (y el que se atreva, puede hacer una función para sacar la tercera palabra de un texto).</p>
