@@ -9,6 +9,57 @@ by Jason Costello, @jsncostello
 MeyerWeb Reset
 *******************************************************************************/
 
+img.align_top {
+  vertical-align: text-top;
+  float: left;
+  margin-right: 10px;
+}
+
+div.contenedor_imagen {
+  overflow: auto;
+}
+
+.sublist {
+  list-style-type: circle;
+}
+
+.no_bullet_list {
+  list-style-type: none;
+}
+
+.latex sub, .latex sup {
+  text-transform: uppercase;
+}
+
+.latex sub {
+  vertical-align: -0.5ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+}
+
+.latex, .latex sub {
+  font-size: 1em;
+  font-family: sans-serif;
+}
+
+.latex sup {
+  font-size: 0.85em;
+  vertical-align: 0.15em;
+  margin-left: -0.36em;
+  margin-right: -0.15em;
+}
+
+.toc {
+  border: 1px solid #373737;
+  border-radius: 2px;
+  width: 30%;
+  background: #dbdbdb;
+}
+
+.toc h5 {
+  text-align: center;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -93,7 +144,6 @@ h1 {
 h2 {
   padding-bottom: 10px;
   font-size: 32px;
-  background: url('../images/bg_hr.png') repeat-x bottom;
 }
 
 h3 {
@@ -250,7 +300,6 @@ hr {
   height: 1px;
   margin-bottom: 5px;
   border: none;
-  background: url('../images/bg_hr.png') repeat-x center;
 }
 
 table {
